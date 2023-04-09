@@ -29,7 +29,7 @@ rr:predicateObjectMap [
 
 
 rr:predicateObjectMap [
-    rr:predicate prefix:favSports;
+    rr:predicate prefix:FavSports;
     rr:objectMap  [
            rr:parentTriplesMap <#FavSportsMapping>;
         ];

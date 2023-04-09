@@ -5,7 +5,7 @@ import { inputData } from './mapping-file';
 import fs from "fs";
 import path from 'path';
 const fsPromise = fs.promises;
-const myFile = path.join(__dirname, "../src/output.json");
+const myFile = path.join(__dirname, "../src/output.txt");
 
 const parsingOptions = {
   toRDF: true,
