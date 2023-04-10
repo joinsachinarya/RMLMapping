@@ -2,17 +2,21 @@ import React from "react";
 import { type FC } from "react";
 // import { Link } from "react-router-dom";
 
-interface HeaderProps {
+interface MenubarProps {
   heading?: string;
 }
 
-const Header: FC<HeaderProps> = (props) => {
+const Menubar: FC<MenubarProps> = (props) => {
   const { heading = "Toolbar/Menubar" } = props;
   return (
     <>
-      <div className="flex border-solid border-x-2 border-t-2 border-gray-300 bg-gray-100 h-12 p-3">
+      <div className="flex bg-gray-100 h-12 p-3">
         <div className="flex justify-between">
-          <img src={"https://picsum.photos/20"} alt="logo" />
+          <img
+            src={"https://picsum.photos/20"}
+            alt="logo"
+            className="rounded-full mr-1"
+          />
           {heading}
         </div>
       </div>
@@ -20,4 +24,4 @@ const Header: FC<HeaderProps> = (props) => {
   );
 };
 
-export default Header;
+export default Menubar;
