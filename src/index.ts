@@ -1,6 +1,8 @@
 import * as RmlParser from '@comake/rmlmapper-js';
-import { mappingSpecification } from './mapping-specifications';
-import { inputData } from './mapping-file';
+// import { mappingSpecification } from './mapping.ttl';
+// import { inputData } from './mapping-file';
+const mappingSpecification = require("./mapping.ttl");
+const inputData = require("./input.json");
 
 import fs from "fs";
 import path from 'path';
@@ -13,7 +15,7 @@ const parsingOptions = {
 }
 
 const createFile = async (data: unknown) => {
-  await fsPromise.appendFile(myFile, JSON.stringify(data) + "\n");
+  await fsPromise.appendFile(myFile, JSON.stringify(data) + '\n');
 }
 const solve = async () => {
   const mappedFile = await RmlParser.parseTurtle(mappingSpecification, inputData, parsingOptions);
