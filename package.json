@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/exe.js"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.3"
+  },
+  "dependencies": {
+    "@comake/rmlmapper-js": "^0.2.5",
+    "@types/jsonld": "^1.5.8"
+  }
+}
