@@ -1,11 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Home from "./Screens/Home";
+import PageTemplate from "./Features/PageTemplate";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <PageTemplate>
+        <Home />
+      </PageTemplate>
     </div>
   );
 }

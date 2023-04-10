@@ -6,9 +6,11 @@ import OutputBox from "../../Components/OutputBox";
 const Home = () => {
   return (
     <>
-      <InputBox />
-      <EditorBox />
-      <OutputBox />
+      <div className="flex">
+        <InputBox />
+        <EditorBox />
+        <OutputBox />
+      </div>
     </>
   );
 };

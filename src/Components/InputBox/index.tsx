@@ -1,11 +1,10 @@
 import React from "react";
+import Tools from "../Tools";
 const InputBox = () => {
   return (
     <>
-      <div>
-        <h1 className="flex w-1/4 border-solid  input-box-container">
-          @tailwind base; @tailwind components; @tailwind utilities;
-        </h1>
+      <div className="flex w-1/4 h-screen border-solid border-2 border-gray-300 bg-gray-100  input-box-container">
+        <Tools />
       </div>
     </>
   );

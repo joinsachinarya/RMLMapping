@@ -1,8 +1,11 @@
 import React from "react";
+import Tools from "../Tools";
 const OutputBox = () => {
   return (
     <>
-      <div></div>
+      <div className="flex w-1/4 h-screen border-solid border-2 border-gray-300 bg-gray-100 output-box-container">
+        <Tools />
+      </div>
     </>
   );
 };
