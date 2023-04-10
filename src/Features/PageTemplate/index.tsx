@@ -1,16 +1,14 @@
 import React from "react";
-import Menubar from "../Menubar";
 import { type FC, type PropsWithChildren } from "react";
+import Header from "../Header";
 
-interface PageTemplateProps extends PropsWithChildren {
-  isMenubar?: boolean;
-}
+type PageTemplateProps = PropsWithChildren;
 
 const PageTemplate: FC<PageTemplateProps> = (props) => {
-  const { children, isMenubar = true } = props;
+  const { children } = props;
   return (
-    <div>
-      {isMenubar ? <Menubar /> : null}
+    <div className="page-template-container">
+      <Header />
       {children}
     </div>
   );
