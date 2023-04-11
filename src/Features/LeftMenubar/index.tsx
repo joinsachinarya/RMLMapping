@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import { FC } from "react";
 
@@ -13,6 +12,7 @@ const LeftMenubar: FC<LeftMenubarProps> = (props) => {
     edit: false,
     mapping: false,
     view: false,
+    open: false,
   });
 
   const toggleMenu = (menu: any) => {
@@ -21,7 +21,12 @@ const LeftMenubar: FC<LeftMenubarProps> = (props) => {
       Object.keys(prevOpenMenu).forEach((key) => {
         newMenuState[key] = false;
       });
-      newMenuState[menu] = !prevOpenMenu[menu];
+      if (menu === "open") {
+        newMenuState[menu] = !prevOpenMenu[menu];
+        newMenuState["file"] = true;
+      } else {
+        newMenuState[menu] = !prevOpenMenu[menu];
+      }
       return newMenuState;
     });
   };
@@ -32,72 +37,128 @@ const LeftMenubar: FC<LeftMenubarProps> = (props) => {
         <div className="mr-4 z-10">
           <button onClick={() => toggleMenu("file")}>File</button>
           {openMenu.file && (
-            <ul className="p-4 bg-gray-50">
+            <ul className=" bg-gray-50">
               <li>
-                <button>New</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  New
+                </button>
               </li>
+
               <li>
-                <button>Open</button>
+                <button
+                  className="border-solid border-b-2 border-gray-200 w-full px-4"
+                  onClick={() => toggleMenu("open")}
+                >
+                  Open
+                  {openMenu.open && (
+                    <ul className=" bg-gray-50">
+                      <li>
+                        <label className="flex cursor-pointer">
+                          From Computer
+                          <input className="px-4 hidden" type="file" />
+                        </label>
+                      </li>
+                      <li>
+                        <a
+                          className=" px-4"
+                          onClick={() => console.log("URI clicked")}
+                        >
+                          URI
+                        </a>
+                      </li>
+                    </ul>
+                  )}
+                </button>
               </li>
+
               <li>
-                <button>Export</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Export
+                </button>
               </li>
             </ul>
           )}
         </div>
+
         <div className="mr-4 z-10">
           <button onClick={() => toggleMenu("edit")}>Edit</button>
           {openMenu.edit && (
-            <ul className="p-4 bg-gray-50">
+            <ul className=" bg-gray-50">
               <li>
-                <button>New Entity</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  New Entity
+                </button>
               </li>
               <li>
-                <button>New Attribute</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  New Attribute
+                </button>
               </li>
               <li>
-                <button>Delete All</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Delete All
+                </button>
               </li>
               <li>
-                <button>Auto Save</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Auto Save
+                </button>
               </li>
               <li>
-                <button>Save</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Save
+                </button>
               </li>
             </ul>
           )}
         </div>
+
         <div className="mr-4 z-10">
           <button onClick={() => toggleMenu("mapping")}>Mapping</button>
           {openMenu.mapping && (
-            <ul className="p-4 bg-gray-50">
+            <ul className=" bg-gray-50">
               <li>
-                <button>Run</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Run
+                </button>
               </li>
               <li>
-                <button>Namespaces</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Namespaces
+                </button>
               </li>
               <li>
-                <button>Generate from example</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Generate from example
+                </button>
               </li>
               <li>
-                <button>Generate from ontology</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Generate from ontology
+                </button>
               </li>
             </ul>
           )}
         </div>
+
         <div className="mr-4 z-10">
           <button onClick={() => toggleMenu("view")}>View</button>
           {openMenu.view && (
-            <ul className="p-4 bg-gray-50">
+            <ul className=" bg-gray-50">
               <li>
-                <button>Show Input</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Show Input
+                </button>
               </li>
               <li>
-                <button>Show Modeling Panel</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Show Modeling Panel
+                </button>
               </li>
               <li>
-                <button>Show Result</button>
+                <button className="border-solid border-b-2 border-gray-200 w-full px-4">
+                  Show Result
+                </button>
               </li>
             </ul>
           )}
