@@ -8,7 +8,7 @@ const NotFound = () => {
     <LogoHeader>
       <div className="flex flex-col items-center h-screen bg-gray-300 text-gray-100 404-page-container">
         <h2 className="font-extrabold text-9xl text-gray-600 mb-16">
-          Error 404 :(
+          {`Error 404 :(`}
         </h2>
         <p className="text-2xl font-semibold md:text-3xl mb-16">
           Oops! We can&apos;t find that page.
