@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@comake/rmlmapper-js": "^0.2.5",
+    "codemirror": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0"
@@ -25,6 +27,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "jsonld": "^8.1.1",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
     "tailwindcss": "^3.3.1",
