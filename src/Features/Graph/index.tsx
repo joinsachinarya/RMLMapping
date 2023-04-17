@@ -18,7 +18,7 @@ import "reactflow/dist/style.css";
 const initialNodes: Node[] = [
   {
     id: "1",
-    // type: "input",
+    type: "input",
     data: {
       label: "Person",
       name: "Tom A.",
@@ -38,8 +38,8 @@ const initialNodes: Node[] = [
 ];
 
 const initialEdges: Edge[] = [
-  { id: "e1-2", source: "1", target: "2", animated: true },
-  { id: "e1-3", source: "1", target: "3" },
+  // { id: "e1-2", source: "1", target: "2", animated: true },
+  // { id: "e1-3", source: "1", target: "3" },
 ];
 
 const nodeTypes = {
@@ -62,6 +62,7 @@ const Graph = () => {
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
       nodeTypes={nodeTypes}
+      onClick={() => console.log(initialNodes)}
     >
       {/* <Background 
       // style={{ display: "none" }} 
