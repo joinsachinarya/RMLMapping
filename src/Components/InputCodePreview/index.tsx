@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
-import jsonInput from "./../../input.json";
+import jsonInput from "../../input.json";
 
 const InputDataPreview = () => {
   const [inputData, setInputData] = useState("");

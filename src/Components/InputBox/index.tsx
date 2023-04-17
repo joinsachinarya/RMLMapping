@@ -1,6 +1,6 @@
 import React from "react";
 import Tools from "../Tools";
-import InputDataPreview from "../InputCode";
+import InputDataPreview from "../InputCodePreview";
 const InputBox = () => {
   return (
     <>
