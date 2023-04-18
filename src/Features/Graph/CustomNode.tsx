@@ -1,30 +1,39 @@
-import React from "react";
-import { memo } from "react";
-import { Handle, NodeProps, Position } from "reactflow";
+import React, { useCallback } from "react";
+import { Handle, Position } from "reactflow";
 
-const CustomNode = ({
-  data,
-  isConnectable,
-  targetPosition = Position.Top,
-  sourcePosition = Position.Bottom,
-}: NodeProps) => {
+const handleStyle = { left: 10 };
+
+const CustomNode = ({ data, isConnectable }) => {
+  const onChange = useCallback((evt: any) => {
+    console.log(evt.target.value);
+  }, []);
+
   return (
-    <>
+    <div>
       <Handle
         type="target"
-        position={targetPosition}
+        position={Position.Top}
         isConnectable={isConnectable}
       />
-      {data?.label}
+      <div>
+        <label htmlFor="text">Label:</label>
+        <input id="text" name="text" onChange={onChange} className="no" />
+      </div>
       <Handle
         type="source"
-        position={sourcePosition}
+        position={Position.Bottom}
+        id="a"
+        style={handleStyle}
         isConnectable={isConnectable}
       />
-    </>
+      <Handle
+        type="source"
+        position={Position.Bottom}
+        id="b"
+        isConnectable={isConnectable}
+      />
+    </div>
   );
 };
 
-CustomNode.displayName = "CustomNode";
-
-export default memo(CustomNode);
+export default CustomNode;
