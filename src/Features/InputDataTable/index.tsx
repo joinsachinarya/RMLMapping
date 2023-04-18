@@ -1,8 +1,7 @@
 import React, { useCallback, useState } from "react";
-import CodeMirror from "@uiw/react-codemirror";
-import jsonInput from "../../input.json";
+import jsonInput from "../../assets/input.json";
 
-const InputDataPreview = () => {
+const InputDataTable = () => {
   const [inputData, setInputData] = useState("");
   const input = JSON.stringify(jsonInput);
 
@@ -13,8 +12,9 @@ const InputDataPreview = () => {
 
   return (
     <div className="relative top-2/3">
-      <CodeMirror value={inputData} height="10rem" onChange={onChange} />
+      {/* <CodeMirror value={inputData} height="10rem" onChange={onChange} /> */}
+      {inputData}
     </div>
   );
 };
-export default InputDataPreview;
+export default InputDataTable;

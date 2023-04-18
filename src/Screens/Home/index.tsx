@@ -1,7 +1,7 @@
 import React from "react";
-import EditorBox from "../../Components/EditorBox";
-import InputBox from "../../Components/InputBox";
-import OutputBox from "../../Components/OutputBox";
+import EditorPanel from "../../Components/EditorPanel";
+import InputPanel from "../../Components/InputPanel";
+import OutputPanel from "../../Components/OutputPanel";
 import PageTemplate from "../../Features/PageTemplate";
 
 const Home = () => {
@@ -10,9 +10,9 @@ const Home = () => {
       <PageTemplate>
         <div className="flex flex-col homepage-container">
           <div className="flex">
-            <InputBox />
-            <EditorBox />
-            <OutputBox />
+            <InputPanel />
+            <EditorPanel />
+            <OutputPanel />
           </div>
         </div>
       </PageTemplate>
